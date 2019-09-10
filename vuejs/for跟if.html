@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header id="myApp">
+    <h1>游戏列表</h1>
+    <div id="mainbox" v-if="seen">
+        <h2>好玩的游戏推荐</h2>
+        <ol>
+            <li v-for="(game, index) in games">
+                ({{index+1}}){{ game.title }}在{{ game.place }}可以玩
+            </li>
+        </ol>
+    </div>
+</header>
+<script>
+    var myapp = new Vue({
+        el:'#mainbox',
+        data:{
+            seen:true,
+            games:[
+                {
+                    title:'三国杀',
+                    place:'油卡',
+                },
+                {
+                    title:'CSGO',
+                    place:'完美世界',
+                },{
+                    title:'腾讯扣扣',
+                    place:'腾讯',
+                },
+                {
+                    title:'暴打小男孩',
+                    place:'4399',
+                },
+                {
+                    title:'L4D2',
+                    place:'steam'
+                }
+            ]
+        }
+    })
+</script>
+</body>
+</html>

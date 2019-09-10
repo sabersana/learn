@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="你搜索尼玛呢" id="txt">
+<script>
+    var txtobj = document.getElementById("txt");
+    txtobj.onfocus = function () {
+        if (this.value == "你搜索尼玛呢") {
+            this.value = "";
+            this.style.color = "black";
+        }
+    }
+    txtobj.onblur = function () {
+        if (this.value.length == 0) {
+            this.value = "你搜索尼玛呢";
+            this.style.color = "gray";
+        }
+    }
+</script>
+</body>
+</html>

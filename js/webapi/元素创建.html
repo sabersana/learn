@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            height: 200px;
+            width: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="document.write" id="btn1">
+<br>
+<input type="button" value="innerHTML" id="btn2">
+<input type="button" value="document.createElement" id="btn3">
+<div id="dv"></div>
+<script>
+    //1.document.write 此方法在页面加载完毕后会清空页面中所有内容
+    var btn1obj = document.getElementById("btn1");
+    btn1obj.onclick = function () {
+        document.write("<p>这是p标签</p>");
+    };
+    //2.innerHTML 此方法是对指定区域重新赋值，若原区域有内容则会被清空
+    var btn2obj = document.getElementById("btn2");
+    btn2obj.onclick = function () {
+        document.getElementById("dv").innerHTML = "<p>这是一个P标签</p>";
+    };
+    //3.创建一个新的标签，然后插入内容放入想要位置
+    var btn3obj = document.getElementById("btn3");
+    btn3obj.onclick = function () {
+        var pobj = document.createElement("p");
+        pobj.innerText = "这是一个p标签";
+        document.getElementById("dv").appendChild(pobj);//追加内容
+    };
+</script>
+</body>
+</html>

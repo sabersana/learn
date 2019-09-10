@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 800px;
+            width: 1379px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        div img {
+            height: 100%;
+        }
+        div:hover::after {
+            content: '';
+            height: 100%;
+            width: 100%;
+            position:  absolute;
+            left: 0;
+            top: 0;
+            border: 50px solid rgba(0, 0, 0, .3);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img.jpg" alt="">
+</div>
+</body>
+</html>

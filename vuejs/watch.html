@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <p>一根香蕉{{ pri }}元，那么两只就是{{ cost }}元</p>
+    <button @click="addpri(5)">涨价五元</button>
+</div>
+<script>
+    // watch就是当这个值发生变化的时候自动调用这个函数
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            pri:0,
+            cost: 0,
+        },
+        watch: {
+            pri: function () {
+                this.cost = this.pri * 2;
+            }
+        },
+        methods: {
+            addpri: function (num) {
+                this.pri += num
+            }
+        }
+    })
+    myApp.pri = 5
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="cxk">
+    <li>菜虚鲲</li>
+    <li>菜虚鲲</li>
+    <li>菜虚鲲</li>
+    <li>菜虚鲲</li>
+    <li>菜虚鲲</li>
+</ul>
+<script>
+    var liobjs = document.getElementById("cxk").getElementsByTagName("li");
+    for (var i=0; i<liobjs.length; i++){
+        liobjs[i].setAttribute("aihao", "唱跳rap");
+        liobjs[i].onclick = function () {
+            alert(this.getAttribute("aihao"));
+        };
+    }
+</script>
+</body>
+</html>

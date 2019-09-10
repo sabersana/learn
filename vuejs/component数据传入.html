@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <say-hi myname="123"></say-hi>
+    <say-hi myname="456"></say-hi>
+    <say-hi myname="a"></say-hi>
+</div>
+<script>
+    Vue.component('say-hi',{
+        props: ['myname'],
+        template:'<p>Hello {{myname}} {{print}}！</p>',
+        computed: {
+            print: function () {
+                console.log(this.myname)
+                return '123'
+            }
+        }
+    });
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            a: 'zzq'
+        }
+    })
+</script>
+</body>
+</html>

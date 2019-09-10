@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+        .goup {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="UP!UP!UP!" class="goup">
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+       $(window).scroll(function () {
+           // console.log(window.screenTop);
+           if ($(window).scrollTop()>1000){
+               $(".goup").fadeIn(500);
+           }
+           else {
+               $(".goup").fadeOut(500);
+           }
+       });
+       $(".goup").click(function () {
+           $("html,body").animate({scrollTop:0}, 3000);
+       });
+    });
+</script>
+</body>
+</html>

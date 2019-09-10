@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <h1>{{ message }}</h1>
+    <h2>{{ message | toupper }}</h2>
+    <p> 现在的学习进度是{{ num }}({{ num | toper }})</p>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            message: 'Hello Vue',
+            num: 0.3
+        },
+        filters: {
+            toupper: function (value) {
+                return value.toUpperCase()
+            },
+            toper: function (value) {
+                return value *100 + '%'
+            }
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li {
+            list-style: none;
+        }
+        .wrap ul li {
+            float: left;
+            margin-left: 20px;
+        }
+        .wrap img {
+            height: 300px;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><a href="#"><img src="img/guidao1.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/guidao2.jpg" alt=""></a></li>
+        <li><a href="#"><img src="img/guidao3.jpg" alt=""></a></li>
+    </ul>
+</div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var imgs = $(".wrap img");
+        imgs.mouseenter(function () {
+            $(this).css("opacity", "1").siblings().css("opacity", "0.4");
+        });
+        imgs.mouseleave(function () {
+            $(this).css("opacity", "0.4");
+        });
+    });
+</script>
+</body>
+</html>

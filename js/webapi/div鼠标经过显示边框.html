@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div {
+            height: 200px;
+            width: 200px;
+            margin-left: 20px;
+            background-color: #fff;
+            /*需把盒子的边框颜色设置为与背景颜色相同，否则默认黑色*/
+            border: 2px solid #fff;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var divobjs = document.getElementsByTagName("div");
+    for (var i = 0; i<divobjs.length; i++){
+        divobjs[i].onmouseover = function () {
+            this.style.border = "2px solid red";
+        }
+        divobjs[i].onmouseout = function () {
+            this.style.border = "";
+        }
+    }
+</script>
+</body>
+</html>

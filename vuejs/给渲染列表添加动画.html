@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        li {
+            border: 1px solid #f10125;
+            margin: 10px 0;
+            line-height: 30px;
+            width: 100%;
+        }
+        li:hover {
+            background-color: #ccc;
+        }
+        /*最基本的添加动画*/
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateY(150px);
+        }
+        .v-enter-active, .v-leave-active {
+            transition: all 1s ease;
+        }
+        /*当离开时，上一个离开下一个向前靠*/
+        .v-move {
+            transition: all 1s ease;
+        }
+        .v-leave-active {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    name:<input type="text" v-model="name">
+    age:<input type="text" v-model="age">
+    <button @click="add">添加</button>
+<!--        给v-for内容动画时须使用transition-group-->
+<!--        使用appear，当列表渲染出来时也显示入场动画-->
+<!--        tag='',替换transition标签，默认值为span-->
+        <transition-group appear tag="ul">
+            <li v-for="(key, i) in list" :key="key.name" @click="removeit(i)">{{key.name}}--------{{key.age}}</li>
+        </transition-group>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: '',
+            age: '',
+            list: [
+                {
+                    name: 'QVQ',
+                    age: 999
+                },
+                {
+                    name: 'OVO',
+                    age: 999
+                },
+                {
+                    name: 'O_O',
+                    age: 999
+                },
+            ]
+        },
+        methods: {
+            add: function () {
+                this.list.push({name: this.name, age: this.age})
+                this.name=""
+                this.age=""
+            },
+            removeit: function (i) {
+                this.list.splice(i, 1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

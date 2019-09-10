@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="改变啦" id="btn">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<input type="text" value="">
+<script>
+    var btnobj=document.getElementById("btn");
+    btnobj.onclick=function () {
+        var inputobjs = document.getElementsByTagName("input");
+        for(var i=0; i<inputobjs.length; i++){
+            if(inputobjs[i].type!="button"){
+                inputobjs[i].value="犹豫，就会败北！";
+            }
+        }
+    };
+</script>
+</body>
+</html>

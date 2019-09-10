@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://www.baidu.com" id="clj">百度</a>
+<script>
+    //不管什么写法，只要给a标签的onclick事件return false 他就不会跳转
+    var cljobj = document.getElementById("clj");
+    cljobj.onclick = function () {
+        alert("你别想过去！");
+        return false;
+    }
+    console.log('a');
+    console.log('b');
+</script>
+</body>
+</html>

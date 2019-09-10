@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <say-to>
+        <span slot="stu">就该好好学习</span>
+        <span slot="tea">就该好好教书</span>
+    </say-to>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        components: {
+            'say-to' : {
+                template: '<div><p>学生，<slot name="stu"></slot></p><p>老师，<slot name="tea"></slot></p></div>'
+            }
+        }
+    })
+</script>
+</body>
+</html>

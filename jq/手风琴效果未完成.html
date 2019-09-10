@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            overflow: hidden;
+        }
+        .imgbox {
+            height: 700px;
+            width: 1600px;
+            position: absolute;
+            left: 300px;
+        }
+        .imgbox li {
+            width: 400px;
+            height: 700px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<ul class="imgbox">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var imgs = $(".imgbox li");
+        for( var i=0; i<imgs.length; i++){
+            imgs.eq(i).css("background", "url(img/guidao"+(i+1)+".jpg) no-repeat center");
+        }
+        imgs.mouseenter(function () {
+            $(this).stop().animate({"width": 1000}).siblings().stop().animate({"width": 100});
+        }).mouseleave(function () {
+            imgs.stop().animate({"width": 400});
+        })
+    });
+</script>
+</body>
+</html>

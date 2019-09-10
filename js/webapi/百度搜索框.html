@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 302px;
+            position: absolute;
+            left: 50%;
+            margin-left: -151px;
+            top: 30%;
+        }
+        #dv #txt {
+            height: 20px;
+            width: 300px;
+        }
+        .ssk {
+            width: 300px;
+            /*height: 300px;*/
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+    <input type="text" id="txt">
+<!--    <div class="ssk"></div>-->
+</div>
+<script>
+    var keywords = ["菜虚鲲喜欢唱", "菜虚鲲喜欢跳", "菜虚鲲喜欢ray", "菜虚鲲喜欢打篮球", "富士康工人", "你是我的小苹果" ]
+    var txtobj = document.getElementById("txt");
+    txtobj.onkeyup = function () {
+        var dvobj = document.getElementById("dv");
+        var nowtxt = this.value;
+        var nowsomething = [];
+        if (nowtxt) {
+            for (var i = 0; i < keywords.length; i++) {
+                if (keywords[i].indexOf(nowtxt) != -1) {
+                    nowsomething.push(keywords[i]);
+                }
+            }
+            // console.log(nowsomething);
+            if (nowsomething.length > 0 && nowtxt.length > 0) {
+                var sskobj = document.createElement("div");
+                sskobj.className = "ssk";
+                sskobj.id = "ssk";
+                if (document.getElementById("ssk")) {
+                    dvobj.removeChild(document.getElementById("ssk"));
+                }
+                for (var i = 0; i < nowsomething.length; i++) {
+                    var keyobj = document.createElement("p");
+                    keyobj.innerText = nowsomething[i];
+                    sskobj.appendChild(keyobj);
+                    document.getElementById("dv").appendChild(sskobj);
+                }
+            } else {
+                if (document.getElementById("ssk")) {
+                    dvobj.removeChild(document.getElementById("ssk"));
+                }
+            }
+        } else {
+            if (document.getElementById("ssk")) {
+                dvobj.removeChild(document.getElementById("ssk"));
+            }
+        }
+    };
+</script>
+</body>
+</html>

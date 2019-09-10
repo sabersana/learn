@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #im {
+            height: 50px;
+            /*width: 50px;*/
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="1.png" alt="" id="im">
+<script>
+    document.onmousemove = function (e) {
+        var imobj = document.getElementById("im");
+        imobj.style.left = e.clientX+"px";
+        imobj.style.top = e.clientY+"px";
+    };
+</script>
+</body>
+</html>

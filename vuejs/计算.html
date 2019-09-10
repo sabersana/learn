@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <p>
+        一只香蕉<input type="text" v-model="pri">元，小明买了
+        <input type="text" v-model="num">个，总共花了{{ cost }}元
+    </p>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            pri: 0,
+            num: 0,
+        },
+        computed: {
+            cost : function () {
+                return this.pri * this.num
+            }
+        }
+    })
+</script>
+</body>
+</html>

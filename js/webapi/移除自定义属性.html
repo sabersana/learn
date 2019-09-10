@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            background-color: #f10215;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击移除自定义属性" id="btn">
+<div id="div1" sor="10">
+</div>
+<script>
+    var btnobj = document.getElementById("btn");
+    btnobj.onclick = function () {
+        var divobj = document.getElementById("div1");
+        divobj.removeAttribute("sor");
+    };
+
+</script>
+</body>
+</html>

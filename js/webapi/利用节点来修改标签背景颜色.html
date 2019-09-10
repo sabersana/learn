@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<div id="dv">
+    <span>asdasdasd</span>
+    <p>asdasdasd</p>
+    <span>asdasdasd</span>
+    <p>asdasdasd</p>
+    <a href="#">asdasdasd</a>
+    <p>asdsdfsdf</p>
+    <a href="#">asdasdasd</a>
+    <p>asdasdasd</p>
+    <span>asdasdasd</span>
+</div>
+<script>
+    var dvobj = document.getElementById("dv");
+    var nodes = dvobj.childNodes;
+    // for(var i = 0; i<nodes.length; i++){
+    //     if (nodes[i].nodeType==1&&nodes[i].nodeName=="P"){
+    //         nodes[i].style.backgroundColor = "red";
+    //     }
+    // }
+    var btnobj = document.getElementById("btn");
+    btnobj.onclick = function () {
+        var c =0;
+        for(var i = 0; i<nodes.length; i++){
+            if (nodes[i].nodeType==1){
+                nodes[i].style.backgroundColor = c%2==0? "red":"yellow";
+                c++;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

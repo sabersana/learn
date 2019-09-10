@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            height: 200px;
+            width: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="增加一个按钮" id="btn1">
+<input type="button" value="删除一个按钮" id="btn2">
+<input type="button" value="清空所有按钮" id="btn3">
+<div id="dv"></div>
+<script>
+    var btn1obj = document.getElementById("btn1");
+    btn1obj.onclick = function () {
+        var btnobj = document.createElement("input");
+        btnobj.value = "按钮";
+        btnobj.type = "button";
+        document.getElementById("dv").appendChild(btnobj);
+    };
+    var btn2obj = document.getElementById("btn2");
+    btn2obj.onclick = function () {
+        document.getElementById("dv").removeChild(document.getElementById("dv").firstElementChild);
+    };
+    var btn3obj = document.getElementById("btn3");
+    btn3obj.onclick = function () {
+        while(document.getElementById("dv").firstElementChild){
+            document.getElementById("dv").removeChild(document.getElementById("dv").firstElementChild);
+        }
+    };
+</script>
+</body>
+</html>

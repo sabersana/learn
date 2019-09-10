@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <p>一根香蕉{{ pri }}块钱，我要买{{ num }}根，要花{{ cost }}块钱</p>
+    <button @click="addm(5)">我还有五块钱</button>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        data: {
+            pri: 5,
+            num: 2
+        },
+        computed: {
+            cost: {
+                get: function () {
+                    return this.pri * this.num
+                },
+                set: function (value) {
+                    this.num = value/this.pri
+                }
+            }
+        },
+        methods: {
+            addm: function (value) {
+                this.cost += value
+            }
+        }
+    })
+</script>
+</body>
+</html>

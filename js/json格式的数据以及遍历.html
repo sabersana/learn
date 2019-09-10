@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //json是一个对象,与对象的字面量创建不同的是属性名需用双引号括起来，但是不可用对象名.属性名来查询，该方法只能确定该对象内存在这个属性名
+    var json={
+        "name":"ZZQ",
+        "age":"20",
+    };
+    for(var i in json){
+        console.log(i+"="+json[i]);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fafafa;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 100px;
+    background-color: #fff;
+}
+.inner {
+    height: 100px;
+    width: 1200px;
+    /*background-color: pink;*/
+    margin: 0 auto;
+}
+.logo {
+    float: left;
+}
+.nav {
+    float: right;
+    line-height: 100px;
+}
+.nav li{
+    float:left;
+    padding: 0 20px;
+}
+.nav li a{
+    font-size: 13.5px;
+    color: #333;
+}
+.nav li a:hover{
+    color: #2288f6;
+}
+.banner {
+    height: 620px;
+    background: url("../images/banner.png") no-repeat top center;
+}
+.fuwu {
+    width: 1055px;
+    height: 660px;
+    margin: 75px auto 0;
+}
+.fuwuhd {
+    width: 1005px;
+    /*background-color: pink;*/
+    border-top: 1px solid #ccc;
+    font-size: 10.5px;
+    flood-color: #666;
+    padding: 0 25px;
+    text-align: center;
+}
+.fuwuhd .myser {
+    margin-top: -15px;
+}
+.fuwuhd .sertext {
+    margin-top: 15px;
+    line-height: 25px;
+}
+.fuwubd {
+    margin: 40px auto 0;
+}
+.fuwubd li {
+    width: 320px;
+    height: 510px;
+    border: 1px solid #e7e8e9;
+    /*background-color: pink;*/
+    float: left;
+}
+.yingxiao {
+    margin: 0 44px;
+}
+.fuwubd li img {
+    margin: 40px 35px;
+}
+.fuwubd li h4 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+}
+.fuwubd li p {
+    font-size: 12px;
+    color: #666;
+    margin: 40px 35px;
+    line-height: 26px;
+}
+.fuwubd li a {
+    display: block;
+    width: 148px;
+    height: 38px;
+    border: 1px solid #ff9412;
+    color: #ff9412;
+    text-align: center;
+    line-height: 38px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 30px auto 0;
+}
+.fuwubd li a:hover {
+    background-color: #ff9412;
+    color: #fafafa;
+}

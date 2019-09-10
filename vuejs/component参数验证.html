@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <h2>个人信息</h2>
+    <my-info name="小明" :age='20' :detail="{address: 'US', language:'EN'}"></my-info>
+</div>
+<script>
+    Vue.component('my-info',{
+        props: {
+            name: {
+                type: String,
+                required: true
+            },
+            age: {
+                type: Number,
+                default: function () {
+                    return 0
+                }
+            },
+            detail: {
+                type: Object,
+                default: function () {
+                    return {
+                        address: 'CN',
+                        language: 'CN'
+                    }
+                }
+            }
+        },
+        template:'<p>姓名： {{ name }}'+
+            '<br>年龄： {{ age }}'+
+            '<br>住址： {{ detail.address }}'+
+            '<br>语言： {{ detail.language }}</p>'
+    });
+    var myApp = new Vue({
+        el:'#myApp'
+    })
+</script>
+</body>
+</html>

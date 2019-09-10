@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="菜虚鲲">
+<script>
+    var btnobj = document.getElementById("btn");
+    btnobj.onclick = f1;
+    btnobj.onmouseover = f1;
+    btnobj.onmouseout = f1;
+    function f1(e) {
+        switch (e.type) {
+            case "click":alert("传球啊，菜徐坤");break;
+            case "mouseover":this.style.backgroundColor = "green";break;
+            case "mouseout":this.style.backgroundColor = "";break;
+        }
+    }
+</script>
+</body>
+</html>

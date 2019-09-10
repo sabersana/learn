@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*ul li:first-child {*/
+        /*    background-color: #f10215;*/
+        /*}*/
+        /*ul li:last-child {*/
+        /*    background-color: #449fdb;*/
+        /*}*/
+        /*ul li:nth-child(3) {*/
+        /*    background-color: yellow;*/
+        /*}*/
+        /*even偶数 odd奇数 n全选 2n=偶数 2n+1=奇数 以及等等*/
+        ul li:nth-child(even) {}
+        /*找出所有有class属性的*/
+        ul li[class] {
+            background-color: #f10215;
+        }
+        /*找出class叫deme的*/
+        ul li[class=demo] {
+            background-color: blue;
+        }
+        /* ^找出以text开头的 &找出结尾 *是全部包含的*/
+        ul li[class^=text] {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="demo">内容</li>
+    <li>内容</li>
+    <li class="text2">内容</li>
+    <li class="text">内容</li>
+    <li>内容</li>
+    <li class="demo">内容</li>
+    <li>内容</li>
+    <li>内容</li>
+    <li class="demo">内容</li>
+    <li>内容</li>
+    <li class="text1">内容</li>
+</ul>
+</body>
+</html>

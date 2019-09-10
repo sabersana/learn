@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .dv {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        .dv img {
+            height: 455px;
+            width: 270px;
+        }
+        #close {
+            height: 10px;
+            width: 30px;
+            position: absolute;
+            right: 60px;
+            top: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="dv">
+    <img src="1.png" alt="" id="im1">
+    <img src="2.png" alt="" id="im2">
+    <span id="close">关闭</span>
+</div>
+<script>
+    function go( ele, aim ) {
+        // console.log(ele.timeid);
+        window.clearInterval(ele.timeid);
+        ele.timeid = setInterval(function () {
+            // console.log("123");
+            var nowwidth = ele.offsetWidth;
+            var step = (aim-nowwidth)/10;
+            step = step>0?Math.ceil(step):Math.floor(step);
+            nowwidth += step;
+            ele.style.width = nowwidth+"px";
+            if (nowwidth == aim ){
+                window.clearInterval(ele.timeid);
+            }
+        }, 20);
+    }
+
+    var closeobj = document.getElementById("close");
+    closeobj.onclick = function () {
+        var parobj = closeobj.parentNode;
+        parobj.removeChild(closeobj);
+        go(document.getElementById("im1"), 0);
+        go(document.getElementById("im2"), 0);
+    };
+</script>
+</body>
+</html>

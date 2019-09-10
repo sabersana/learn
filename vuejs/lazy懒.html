@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="msg">
+    <h1>
+        {{ message }}
+    </h1>
+<!--    光标出去之后才进行响应-->
+    <input type="text" v-model.lazy="message" placeholder="既然要追求刺激，那么就贯彻到底">
+</div>
+<script>
+    var myapp = new Vue({
+        el:'#msg',
+        data:{
+            message:'Hello World!',
+        },
+    });
+</script>
+</body>
+</html>

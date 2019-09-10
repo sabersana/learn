@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <h1>打印对象</h1>
+    <span v-for="(key, value) in msg">{{key}} : {{value}}<br></span>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        data: {
+            msg: {
+                name: '蔡徐坤',
+                sex: '男',
+                hobby: '篮球'
+            }
+        }
+    })
+</script>
+</body>
+</html>

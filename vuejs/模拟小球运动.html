@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .round {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #f10125;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <transition
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @after-enter="afterEnter">
+        <div class="round" v-show="flag"></div>
+    </transition>
+    <button @click="flag = !flag">飞啊</button>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            flag: false
+        },
+        methods: {
+            beforeEnter(el) {
+                el.style.transform = 'translate(0, 0)'
+                console.log(el);
+            },
+            enter(el, done) {
+                el.offsetWidth
+                el.style.transform = 'translate(150px, 400px)'
+                el.style.transition = 'all 1s ease'
+                console.log('2');
+                done()
+            },
+            afterEnter(el) {
+                this.flag = !this.flag
+                console.log('3');
+            }
+        }
+    })
+</script>
+</body>
+</html>

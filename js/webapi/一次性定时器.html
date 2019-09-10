@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 用法与 setInterval() 相同
+    var timeid = window.setTimeout(function () {
+        alert("123");
+    }, 1000);
+    // 清除是为了清除占用内存
+    window.clearTimeout(timeid);
+</script>
+</body>
+</html>

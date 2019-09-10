@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ES5中
+    function Stu1(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayHi = function () {
+            console.log('Hi');
+        }
+    }
+    var stu1 = new Stu1('zzq', 20);
+    console.log(stu1.name, stu1.age);
+    stu1.sayHi();
+    console.log('-----------');
+    //ES6中
+    class Stu2
+    {
+        constructor(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        sayHi(){
+            console.log('Hi');
+        }
+    }
+    var stu2 = new Stu2('zzq', 20);
+    console.log(stu2.name, stu2.age);
+    stu2.sayHi();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var i = 10;//0级作用域
+    function f() {
+        var i = 20;//1级作用域
+        function f1() {
+            var i = 30;//2级作用域
+            console.log(i);
+        }
+        f1();
+    }
+    f();
+    //作用域从高到低使用，若2级中找不到i这个数字，则到1级中去找，再找不到，又跳到0级中去找
+</script>
+</body>
+</html>

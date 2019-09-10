@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    Symbol 生成独一无二的值
+     */
+    //无值
+    var str1 = Symbol();
+    var str2 = Symbol();
+    console.log(str1 == str2);
+    //有值
+    var str3 = Symbol('1');
+    var str4 = Symbol('1');
+    console.log(str3 == str4);
+</script>
+</body>
+</html>

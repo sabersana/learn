@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            width: 240px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+        }
+        ul {
+            width: 2000px;
+        }
+        #dv {
+            height: 400px;
+            width: 1300px;
+            /*border: #f10215 solid 1px;*/
+            position: absolute;
+            left: 50%;
+            margin-left: -600px;
+            top: 30%;
+            /*overflow: hidden;*/
+        }
+
+    </style>
+</head>
+<body>
+<div id="dv">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+<script>
+    function go( ele, aim ) {
+        // console.log(ele.timeid);
+        window.clearInterval(ele.timeid);
+        ele.timeid = setInterval(function () {
+            // console.log("123");
+            var nowwidth = ele.offsetWidth;
+            var step = (aim-nowwidth)/10;
+            step = step>0?Math.ceil(step):Math.floor(step);
+            nowwidth += step;
+            ele.style.width = nowwidth+"px";
+            if (nowwidth == aim ){
+                window.clearInterval(ele.timeid);
+            }
+        }, 20);
+    }
+
+    var liobjs = document.getElementById("dv").getElementsByTagName("li");
+    for (var i=0; i<liobjs.length; i++){
+        liobjs[i].style.backgroundImage = "url("+(i+1)+".jpg";
+        liobjs[i].style.backgroundSize = "cover";
+        liobjs[i].onmouseover=mouseoverHandle;
+        liobjs[i].onmouseout = mouseoutHandle;
+    }
+
+    function mouseoverHandle() {
+        for(var j=0; j<liobjs.length; j++){
+                go(liobjs[j], 100);
+        }
+            go(this, 800);
+        }
+    function mouseoutHandle() {
+        go(this, 240);
+        for(var j=0; j<liobjs.length; j++){
+            go(liobjs[j], 240);
+        }
+    }
+</script>
+</body>
+</html>

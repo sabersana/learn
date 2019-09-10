@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="msg">
+    <h1>
+        {{ message }}
+    </h1>
+    <textarea type="text" v-model.trim="message" cols="50" rows="30"></textarea>
+</div>
+<script>
+    var myapp = new Vue({
+        el:'#msg',
+        data:{
+            message:'Hello World!',
+        },
+    });
+</script>
+</body>
+</html>

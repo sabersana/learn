@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="text">
+<input type="button" value="存储数据" id="setItem">
+<input type="button" value="读取数据" id="getItem">
+<input type="button" value="删除数据" id="delItem">
+<input type="button" value="清除数据" id="clear">
+<script>
+    var textobj = document.getElementById("text");
+    document.getElementById("setItem").onclick = function () {
+        var text = textobj.value;
+        window.sessionStorage.setItem( "text", text );
+    };
+    document.getElementById("getItem").onclick = function () {
+        console.log(window.sessionStorage.getItem("text"));
+    };
+    document.getElementById("delItem").onclick = function () {
+        window.sessionStorage.removeItem( "text" );
+    };
+    document.getElementById("clear").onclick = function () {
+        window.sessionStorage.clear();
+    };
+</script>
+</body>
+</html>

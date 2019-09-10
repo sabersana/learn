@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            display: block;
+            height: 30px;
+            width: 60px;
+            /*float: left;*/
+            line-height: 30px;
+            text-align: center;
+            /*background-color: #f10215;*/
+            /*color: #333333;*/
+        }
+        a {
+            text-decoration: none;
+            color: #333333;
+        }
+        .wrap {
+            position: absolute;
+            left: 300px;
+            top: 200px;
+        }
+        .wrap>li {
+            float: left;
+            margin-right: 20px;
+            border: 1px black solid;
+        }
+        .wrap ul{
+            float: left;
+            margin-left: -1px;
+            display: none;
+        }
+        .wrap ul li {
+            border: 1px black solid;
+            border-top: 0px;
+        }
+    </style>
+</head>
+<body>
+<ul class="wrap">
+    <li>
+        <a href="#">菜虚鲲</a>
+        <ul>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">菜虚鲲</a>
+        <ul>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">菜虚鲲</a>
+        <ul>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+            <li><a href="#">菜虚鲲</a></li>
+        </ul>
+    </li>
+</ul>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var lis = $(".wrap li");
+        $(lis).mouseenter(function () {
+            $(this).children("ul").show();
+        });
+        $(lis).mouseleave(function () {
+            $(this).children("ul").hide();
+        });
+    })
+</script>
+</body>
+</html>

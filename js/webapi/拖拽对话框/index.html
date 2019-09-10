@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dv {
+            text-align: center;
+        }
+        #bhz {
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #myimg {
+            width: 1000px;
+            height: 692px;
+            position: absolute;
+            left: 500px;
+            top: 100px;
+            overflow: hidden;
+            display: none;
+            background-color: #000000;
+        }
+        #myimg img {
+            height: 100%;
+        }
+        #myimg span {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="dv">
+    <img src="1.jpg" alt="">
+    <br>
+    <a href="javascript:void(0)" id="btn">老板给我来一份色图</a>
+</div>
+<div id="bhz"></div>
+<div id="myimg">
+    <img src="2.jpg" alt="">
+    <span id="closebtn">关闭</span>
+</div>
+<script>
+    var btnobj = document.getElementById("btn");
+    btnobj.onclick = function () {
+        document.getElementById("bhz").style.display = "block";
+        document.getElementById("myimg").style.display = "block";
+    };
+    document.getElementById("closebtn").onclick = function () {
+        document.getElementById("bhz").style.display = "none";
+        document.getElementById("myimg").style.display = "none";
+    };
+    document.getElementById("myimg").onmousedown = function (e) {
+        var sx = e.clientX - document.getElementById("myimg").offsetLeft;
+        var sy = e.clientY - document.getElementById("myimg").offsetTop;
+        // console.log("123");
+        document.onmousemove = function (e) {
+            var x = e.clientX - sx;
+            var y = e.clientY - sy;
+            document.getElementById("myimg").style.left = x+"px";
+            document.getElementById("myimg").style.top = y+"px";
+        };
+    };
+    document.getElementById("myimg").onmouseup = function () {
+        document.onmousemove = null;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box .hd span {
+            background-color: #000000;
+            border: #f10215 1px solid;
+            color: #fff;
+        }
+        .box .bd {
+            height: 300px;
+            width: 300px;
+            /*background-color: #000;*/
+            border: #f10215 1px solid;
+        }
+        .box .bd li {
+            color: #fff;
+            display: none;
+        }
+        .box .hd .cur {
+            color: #000;
+            background-color: #fff;
+        }
+        .box .bd .cur {
+            color: #000;
+            background-color: #fff;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="hd" id="hd">
+        <span index="0" class="cur">我是第几</span>
+        <span index="1">我是第几</span>
+        <span index="2">我是第几</span>
+        <span index="3">我是第几</span>
+    </div>
+    <div class="bd" id="bd">
+        <ul>
+            <li class="cur">第一</li>
+            <li>第二</li>
+            <li>第三</li>
+            <li>第四</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var spanobjs = document.getElementById("hd").getElementsByTagName("span");
+    var liobjs = document.getElementById("bd").getElementsByTagName("li");
+    for (var i = 0; i<spanobjs.length; i++){
+        spanobjs[i].onclick = function () {
+            for (var j = 0; j<spanobjs.length; j++){
+                spanobjs[j].removeAttribute("class");
+                liobjs[j].removeAttribute("class");
+            }
+            this.className = "cur";
+            var num = this.getAttribute("index");
+            liobjs[num].className = "cur";
+        };
+    }
+</script>
+</body>
+</html>

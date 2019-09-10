@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            background-color: rgba(0, 0, 0, .3);
+        }
+        #dv img {
+            height: 200px;
+            /*width: 100%;*/
+            margin: 0 20px;
+        }
+        #dv img:first-child {
+            margin-left: 500px;
+        }
+        body {
+            background: url("1.jpg") no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+    <img src="1.jpg" alt="">
+    <img src="2.jpg" alt="">
+    <img src="3.png" alt="">
+</div>
+<script>
+    var imgobj = document.getElementById("dv").children;
+    for(var i=0; i<imgobj.length; i++){
+        imgobj[i].onclick = function () {
+            document.body.style.backgroundImage = "url("+this.src+")";
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        #im {
+            position: absolute;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+<!--<input type="button" value="你他娘的别抖了" id="btn">-->
+<img src="1.jpg" alt="" id="im">
+<script>
+    var imobj = document.getElementById("im");
+    setInterval(function () {
+        var x = parseInt(Math.random()*1000+1);
+        var y = parseInt(Math.random()*500+1);
+        var b = Math.random()*1.5;
+        console.log(x);
+        console.log(y);
+        imobj.style.left = x+"px";
+        imobj.style.right = y+"px";
+        imobj.style.transform = "scale("+b+")";
+    }, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="按钮">
+<script>
+    //1.addEventListener("事件名称不加on", 函数, false ) 谷歌火狐支持，ie8不支持
+    //解绑：对象.removeEventListener("事件名称不加on", 函数名字, false)
+    var btnboj = document.getElementById("btn");
+    btnboj.addEventListener("click",
+    function () {
+        console.log("1231");
+    },
+    false)
+    btnboj.addEventListener("click",
+        function () {
+            console.log("ghjgh");
+        },
+        false)
+    btnboj.addEventListener("click",
+        function () {
+            console.log("1dgfdgf");
+        },
+        false)
+    //2.attachEvent("事件名称加on", 函数) 谷歌火狐不支持，ie8支持
+    //解绑：对象.detachEvent("事件名称加on", 函数名字)
+    btnboj.attachevent("onclick",function () {
+        console.log("123");
+    })
+    //3.onclick
+    //解绑：对象.on事件名称=null
+
+</script>
+</body>
+</html>

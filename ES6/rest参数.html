@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //arguments代替所有多余参数
+    function f1() {
+        console.log(arguments);
+    }
+    f1(1, 2, 3, 4, 5, 6);
+
+    function f2(...vals) {
+        console.log(vals);
+    }
+    f2(1, 2, 3, 4, 5, 6);
+
+    //与arguments区别
+    //rest更加灵活
+    function f3(a, b, c, ...d) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+    }
+    f3(1, 2, 3, 4, 5)
+</script>
+</body>
+</html>

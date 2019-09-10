@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #dv {
+            height: 300px;
+            width: 300px;
+            background-color: #f10215;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="跑他娘的400米" id="btn1">
+<input type="button" value="跑他娘的800米" id="btn2">
+<div id="dv"></div>
+<script>
+    var dvobj = document.getElementById("dv");
+    document.getElementById("btn1").onclick = function () {
+        f(dvobj, 400);
+    };
+    document.getElementById("btn2").onclick = function () {
+        f(dvobj, 800);
+    };
+    function f(ele, aim) {
+        //后两行固定只能生成一个定时器
+        window.clearInterval(ele.timeid);
+        ele.timeid =  timeid = window.setInterval(function () {
+            var nowleft = ele.offsetLeft;
+            var step = nowleft<aim?10:-10;
+            var anleft = nowleft+step;
+            // console.log(nowleft);
+            if (anleft<aim+step || anleft>aim+step && anleft>=0){
+                ele.style.left = anleft+"px";
+            // }else if (anleft>aim+step && anleft>=0) {
+            //     ele.style.left = anleft+"px";
+            }
+            else{
+                window.clearInterval(ele.timeid);
+                ele.style.left = aim+"px";
+            }
+        },20);
+    }
+
+</script>
+</body>
+</html>

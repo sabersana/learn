@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+<!--    单选框会自动给相同v-model属性加上单选功能，无须name属性-->
+    <h2>您的性别</h2>
+    <input type="radio" value="男" v-model="sex"> 男
+    <input type="radio" value="女" v-model="sex"> 女
+    <h2>您的爱好</h2>
+    <input type="radio" value="看电影" v-model="hobby"> 看电影
+    <input type="radio" value="玩游戏" v-model="hobby"> 打篮球
+    <p>性别： {{sex}}<br> 爱好： {{hobby}}</p>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        data: {
+            sex: '',
+            hobby: ''
+        }
+    })
+</script>
+</body>
+</html>

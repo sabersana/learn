@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>{{username}}</div>
+<div>{{age}}</div>
+<p>
+    {{if( age > 18 )}}
+    哥哥来了
+    {{else}}
+    妹妹来了
+    {{/if}}
+</p>
+<div>
+    {{each orders order index}}
+        第{{index}}个爱好是{{order.hobby}}<br>
+    {{/each}}
+</div>
+<!--<form action="/test" method="get">-->
+<!--    <input type="text" name="myname"><br>-->
+<!--    <input type="text" name="myage"><br>-->
+<!--    <input type="submit" value="提交">-->
+<!--</form>-->
+</body>
+</html>

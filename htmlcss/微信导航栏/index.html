@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url("images/navbg.jpg") repeat-x;
+        }
+        .head {
+            width: 968px;
+            height: 75px;
+            margin: 0 auto;
+        }
+        .logo {
+            float: left;
+            height: 44px;
+            margin-top: 14px;
+        }
+        .nav {
+            height: 54px;
+            padding-top: 21px;
+            float: right;
+        }
+        .nav li {
+            float: left;
+            list-style: none;
+            padding: 0 1px;
+            /*height: 33px;*/
+        }
+        .nav li a {
+            text-decoration: none;
+            color: white;
+            padding-left: 16px;
+            line-height: 33px;
+            display: inline-block;
+            height: 33px;
+            font-size: 14px;
+        }
+        .nav .shouyeh {
+            font-weight: 700;
+            background: url("images/menu.png") no-repeat;
+        }
+        .nav .shouyee {
+            background: url("images/menu.png") no-repeat right;
+        }
+        .nav span {
+            display: inline-block;
+            height: 33px;
+            padding-right: 16px;
+        }
+        .nav a:hover {
+            background: url("images/menu.png") no-repeat;
+            font-weight: 200;
+        }
+        .nav a:hover span {
+            background: url("images/menu.png") no-repeat right;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <img src="images/wx.png" class="logo">
+    <ul class="nav">
+        <li><a href="#" class="shouyeh"><span class="shouyee">首页</span></a></li>
+        <li><a href="#"><span>帮助与反馈</span></a></li>
+        <li><a href="#"><span>公众平台</span></a></li>
+        <li><a href="#"><span>开放平台</span></a></li>
+        <li><a href="#"><span>微信支付</span></a></li>
+        <li><a href="#"><span>微信网页版</span></a></li>
+        <li><a href="#"><span>表情开放平台</span></a></li>
+        <li><a href="#"><span>微信广告</span></a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="f">
+    <p>我们是内容</p>
+    <p>我们是内容</p>
+    <p>我们是内容</p>
+    <p>我们是内容</p>
+    <p>我们是内容</p>
+</div>
+<div id="s">
+    <p>我tm是内容？</p>
+    <p>我tm是内容？</p>
+    <p>我tm是内容？</p>
+    <p>我tm是内容？</p>
+    <p>我tm是内容？</p>
+</div>
+<input type="button" value="你是内容？" id="btn">
+<script>
+    var btnobj=document.getElementById("btn");
+    btnobj.onclick=function () {
+        var pObjs = document.getElementById("f").getElementsByTagName("p");
+        for (var i = 0; i < pObjs.length; i++) {
+            pObjs[i].innerText = "是的，没错，我就是内容";
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="谁怀孕啦？">
+<input type="button" value="谁怀孕啦？">
+<input type="button" value="谁怀孕啦？">
+<input type="button" value="谁怀孕啦？">
+<input type="button" value="谁怀孕啦？">
+<script>
+    var inputobjs = document.getElementsByTagName("input");
+    for(var i = 0; i<inputobjs.length; i++){
+        inputobjs[i].onclick=function () {
+            for (var j = 0; j < inputobjs.length; j++) {
+                inputobjs[j].value = "谁怀孕啦？";
+            }
+            this.value = "对不起，是我怀孕了";
+        };
+    }
+</script>
+</body>
+</html>

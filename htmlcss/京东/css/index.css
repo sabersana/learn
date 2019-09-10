@@ -1,0 +1,249 @@
+.jdbody{
+    height: 480px;
+    position: relative;
+}
+.jdbody .ad {
+    height: 100%;
+    width: 100%;
+    background: url("../images/bg.png") no-repeat top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.jdbody .ad a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+}
+.jdbody .main {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    /*background-color: #000;*/
+}
+.jdbody .jd_col1 {
+    height: 465px;
+    width: 190px;
+    float: left;
+    background-color: #fefefe;
+    color: #636363;
+    padding-top: 15px;
+}
+.jdbody .jd_col1 li {
+    font-size: 14px;
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+    /*width: 100%;*/
+}
+.jdbody .jd_col1 li:hover {
+    background-color: gray;
+}
+.jdbody .jd_col1 a{
+    color: #636363;
+}
+.jdbody .jd_col1 a:hover {
+    color: #f10215;
+}
+.jdbody .jd_col2 {
+    height: 480px;
+    width: 790px;
+    float: left;
+    /*background-color: yellow;*/
+    margin-left: 10px;
+}
+.jd_hd {
+    height: 340px;
+    position: relative;
+}
+.jd_hd_ad {
+    position: absolute;
+    height: 340px;
+    width: 100%;
+    background: url("../images/banner.jpg") no-repeat;
+}
+.arr_l, .arr_r {
+    width: 25px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    font-family: icomoon;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+}
+.arr_l {
+    right: 0;
+}
+.jd_hd ul {
+    height: 20px;
+    width: 180px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -90px;
+    border-radius: 10px;
+}
+.jd_hd li {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    float: left;
+    margin: 4px 5px;
+    cursor: pointer;
+}
+.jd_hd .red {
+    background-color: #f10215;
+}
+.pic a{
+    display: block;
+    height: 130px;
+    width: 390px;
+    float: left;
+    margin-top: 10px;
+}
+.pic a img {
+    height: 100%;
+}
+.pic .firstpic {
+    margin-right: 10px;
+}
+.jdbody .jd_col3 {
+    width: 190px;
+    height: 480px;
+    float: left;
+    /*background-color: greenyellow;*/
+    margin-left: 10px;
+}
+.jd_col3 .user {
+    height: 95px;
+    padding: 20px 15px 0;
+    position: relative;
+}
+.user .userpic {
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.user .userpic img {
+    width: 100%;
+    height: auto;
+}
+.user .user_info  {
+    font-size: 12px;
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    color: #666;
+}
+.user .user_info a {
+    color: #666;
+}
+.user .user_info a:hover {
+    color: #f10215;
+}
+.user .user_ad {
+    margin-top: 14px;
+}
+.user .user_ad a {
+    display: inline-block;
+    width: 70px;
+    height: 20px;
+    color: #f10215;
+    font-size: 12px;
+    text-align: center;
+    border: 2px solid #f10215;
+    line-height: 20px;
+}
+.user .user_ad a:hover {
+    background-color: #f10215;
+    color: #fff;
+}
+.jd_col3 .news {
+    height: 149px;
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
+    padding: 5px 15px 0;
+}
+.jd_col3 .newshd {
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    padding-bottom: 5px;
+}
+.jd_col3 .newshd a {
+    color: #999;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.jd_col3 .newshd .cuxiao {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+.jd_col3 .newshd .more {
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+.jd_col3 .line {
+    width: 28px;
+    height: 2px;
+    background-color: #f10215;
+    position: absolute;
+    bottom: -1px;
+    left: 8px;
+}
+.jd_col3 .newsbd {
+    margin-top: 10px;
+}
+.jd_col3 .news li {
+    height: 23px;
+    line-height: 23px;
+}
+.jd_col3 .newsbd a {
+    font-size: 12px;
+    color: #999;
+}
+.jd_col3 .jd_ser {
+    height: 209px;
+    /*padding: 20px 15px 0;*/
+    overflow: hidden;
+}
+.jd_col3 .jd_ser ul {
+    width: 195px;
+}
+.jd_col3 .jd_ser li {
+    height: 69px;
+    width: 47px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    float: left;
+}
+.jd_col3 .jd_ser a {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+.jd_col3 .jd_ser i {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background: url("../images/sprite_fs@1x.png") no-repeat;
+    margin: 15px auto 8px;
+}
+.jd_col3 .jd_ser p {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+}
+.jd_ser a:hover p {
+    color: #f10215;
+}

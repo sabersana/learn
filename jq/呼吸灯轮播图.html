@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            overflow: hidden;
+        }
+        .slider {
+            position: absolute;
+            left: 300px;
+        }
+        .slider li{
+            /*float: left;*/
+            height: 500px;
+            width: 700px;
+            display: none;
+            position: absolute;
+        }
+        .slider img {
+            height: 500px;
+        }
+        .slider li:first-child {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul class="slider">
+    <li><img src="img/guidao1.jpg" alt=""></li>
+    <li><img src="img/guidao2.jpg" alt=""></li>
+    <li><img src="img/guidao3.jpg" alt=""></li>
+</ul>
+<input type="button" value="下一张" class="arrow_right">
+<input type="button" value="上一张" class="arrow_left">
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $(function () {
+        var btns = $("input");
+        var imgs = $(".slider li");
+        var count = 0;
+        $(btns[0]).click(function () {
+            count++;
+            if (count == imgs.length){
+                count = 0;
+            }
+            $(imgs).eq(count).fadeIn().siblings("li").fadeOut();
+        });
+
+        $(btns[1]).click(function () {
+            count--;
+            if (count == -1){
+                count = imgs.length-1;
+            }
+            $(imgs).eq(count).fadeIn().siblings("li").fadeOut();
+        });
+    })
+</script>
+</body>
+</html>

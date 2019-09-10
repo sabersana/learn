@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //例如ajax
+    var p1 = new Promise(function (resolve, reject) {
+        var ran = Math.ceil(Math.random()*2);
+        if (ran==2)
+            resolve(ran);
+        else
+            reject(ran)
+    });
+    var p2 = new Promise(function (resolve, reject) {
+        var ran = Math.ceil(Math.random()*2);
+        if (ran==2)
+            resolve(ran);
+        else
+            reject(ran)
+    });
+    p1
+        .then(function (data) {
+            console.log('this number is 2', data);
+            return p2;
+        },function (data) {
+            // console.log('you are lose');
+            return p1;
+        })
+        .then(function (data) {
+            console.log('this number is 2', data);
+        },function (data) {
+            console.log('you are lose');
+        })
+</script>
+</body>
+</html>

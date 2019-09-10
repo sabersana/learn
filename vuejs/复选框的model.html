@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <input type="checkbox" v-model="games" value="三国杀"> 三国杀
+    <input type="checkbox" v-model="games" value="CSGO"> CSGO
+    <input type="checkbox" v-model="games" value="4399"> 4399
+    <p>你喜欢的游戏有： {{games}}</p>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            games: []
+        }
+    })
+</script>
+</body>
+</html>

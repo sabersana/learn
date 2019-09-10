@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = ['a', 'b', 'c', 'd'];
+    //最基本的for循环
+    for(var i=0; i<arr.length; i++){
+        console.log('index:',i,'value:',arr[i]);
+    }
+    //forEach 和 for ... in ...为ES5内容
+    //forEach 只能便利数组
+    console.log('------------');
+    arr.forEach(function (item, index) {
+        console.log('index:',index,'value:',item);
+    });
+    console.log('------------');
+    //for...in 推荐遍历对象，因为index返回为字符串类型，遍历数组可能会出现问题
+    var obj = {
+        'name':'小明',
+        'age':20,
+        'isman':'true',
+        'hobby':'sing',
+        'birthday':'every',
+    };
+    for (var key in obj){
+        console.log(key, ' : ', obj[key]);
+    }
+    console.log('------------');
+    //for ... of ... 为ES6内容，功能更为强大
+    for(var val of arr){
+        console.log('vlue:', val);
+    }
+    console.log('------------');
+    var set = new Set([1, 2, 3, 4, 5, 6]);
+    for (var val of set){
+        console.log('vlue:', val);
+    }
+    console.log('------------');
+    //对象无法用for of 遍历
+    for (var val of obj){
+        console.log('vlue:', val);
+    }
+</script>
+</body>
+</html>

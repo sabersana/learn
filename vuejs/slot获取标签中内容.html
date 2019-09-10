@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <say-to name="王小明">你长大了吗？</say-to>
+    <say-to name="臭小嗨">你在干什么？</say-to>
+    <say-to name="非凡哥">午饭吃了吗？</say-to>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        components: {
+            'say-to' : {
+                props: ['name'],
+                template: '<p>{{ name }}，<slot></slot></p>'
+            }
+        }
+    })
+</script>
+</body>
+</html>

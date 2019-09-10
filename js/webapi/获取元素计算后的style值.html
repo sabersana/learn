@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            height: 300px;
+            width: 300px;
+            background-color: #f10215;
+            left: 100px;
+            /*注意此时left没有position*/
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" value="结果是啥呢？" id="btn">
+<script>
+    function getStyle(ele, stylename){
+        return window.getComputedStyle?window.getComputedStyle(ele, null)[stylename]: ele.currentStyle[stylename];
+    }
+    document.getElementById("btn").onclick = function () {
+        console.log(getStyle(document.getElementById("dv"), "left"));
+    }
+</script>
+</body>
+</html>

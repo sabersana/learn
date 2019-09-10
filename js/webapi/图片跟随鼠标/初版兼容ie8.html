@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        #im {
+            height: 50px;
+            /*width: 50px;*/
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="1.png" alt="" id="im">
+<script>
+    document.onmousemove = function (e) {
+        e = window.event || e ;
+        var imobj = document.getElementById("im");
+        imobj.style.left = e.pageX+"px";//相对于页面顶部的距离，修复了滚轮滚动图片不动的bug?  错误？
+
+        imobj.style.top = e.pageY+"px";
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="有0个人觉得很赞">
+<input type="button" value="有0个人觉得很赞">
+<input type="button" value="有0个人觉得很赞">
+<script>
+    function f() {
+        var point = 1;
+        return function () {
+            this.value = "有"+ (point++) +"个人觉得很赞";
+        }
+    }
+
+    var btnobjs = document.getElementsByTagName("input");
+    for (var i=0; i<btnobjs.length; i++){
+        // var pointnum = 1;
+        // var changenum = f();
+        btnobjs[i].onclick = f();
+    }
+</script>
+</body>
+</html>

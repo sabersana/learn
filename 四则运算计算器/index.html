@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--    <link rel="stylesheet" href="css/bootstrap.min.css">-->
+    <script src="js/vue.js"></script>
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        span {
+            display: block;
+            height: 30px;
+            font-size: large;
+            line-height: 30px;
+            text-align: right;
+        }
+        #app {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            margin-left: -120px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            user-select:none;
+            height: 40px;
+            width: 60px;
+            font-size: large;
+            transition: all 0.5s ease;
+        }
+        td:hover {
+            background-color: #ccc;
+        }
+        .result {
+            resize: none;
+            background-color: #fff;
+            border: 1px #000 solid;
+            outline: none;
+            height: 100px;
+            width: 243px;
+            overflow: auto;
+        }
+        .result input {
+            height: 30px;
+            width: 100%;
+            font-size: large;
+            border: 0px;
+            text-align: right;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="result">
+        <span v-for="ss in sss">{{ss}}</span>
+        <input type="text" v-model="nowdo">
+    </div>
+    <div class="btn">
+        <table border="1">
+            <tr v-for="item in fhs">
+                <td v-for="fh in item" @click="dow(fh)">{{fh}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            fhs: [
+                ['C', 'del', '%', '÷'],
+                ['7', '8', '9', '×'],
+                ['4', '5', '6', '-'],
+                ['1', '2', '3', '+'],
+                ['none', '0', '.', '=']
+            ],
+            sss: [],
+            nowdo: '0',
+        },
+        methods: {
+            check: function(){
+                var val = this.sss[this.sss.length-1]
+                if (this.sss.length > 0){
+                    if(val == '+' || val == '-' || val == '×' || val == '÷')
+                        this.sss.pop()
+                    return true
+                }
+                else
+                    return false
+            },
+            getans: function(){
+                var len = this.sss.length-1
+                var ans = 0
+                switch (this.sss[len-2] ) {
+                    case '+': {ans = parseInt(this.sss[len-3]) + parseInt(this.nowdo); break }
+                    case '-': {ans = parseInt(this.sss[len-3]) - parseInt(this.nowdo); break }
+                    case '×': {ans = parseInt(this.sss[len-3]) * parseInt(this.nowdo); break }
+                    case '÷': {ans = parseInt(this.sss[len-3]) / parseInt(this.nowdo); break }
+                }
+                this.sss.push(ans)
+                this.nowdo = ans;
+            },
+            dow: function (val) {
+                var len = this.nowdo.length;
+                switch (val) {
+                    case '0': {if (len<5) if (this.nowdo != '0') this.nowdo += val; break}
+                    case '1': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '2': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '3': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '4': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '5': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '6': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '7': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '8': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case '9': {if (len<5) if (this.nowdo == '0') this.nowdo = val; else this.nowdo += val; break}
+                    case 'del': {if (this.nowdo != '0') this.nowdo=this.nowdo.substr(0, len - 1); break}
+                    case 'C': {this.nowdo='0'; this.sss=[]; break}
+                    case '+': {if (this.nowdo!='0') this.sss.push(this.nowdo);if (this.check()) this.sss.push('+'); this.nowdo='0'; break}
+                    case '-': {if (this.nowdo!='0') this.sss.push(this.nowdo);if (this.check()) this.sss.push('-'); this.nowdo='0'; break}
+                    case '×': {if (this.nowdo!='0') this.sss.push(this.nowdo);if (this.check()) this.sss.push('×'); this.nowdo='0'; break}
+                    case '÷': {if (this.nowdo!='0') this.sss.push(this.nowdo);if (this.check()) this.sss.push('÷'); this.nowdo='0'; break}
+                    case '=': {if(this.sss[len-1]!='÷' && this.nowdo!='0'){this.sss.push(this.nowdo, '='); this.getans()}break}
+                }
+                var divobj = document.querySelector('#app .result')
+                divobj.scrollTop = divobj.scrollHeight;
+            }
+        }
+    })
+</script>
+</body>
+</html>

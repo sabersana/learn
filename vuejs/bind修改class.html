@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+<p v-bind:class="{red:isRed}">我日，好几把酷炫</p>
+<p :class="{red:isRed}">我日，好几把酷炫</p>
+    <button @click="changecolor()">点击变色</button>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            isRed: true
+        },
+        methods: {
+            changecolor: function () {
+                this.isRed = !this.isRed
+            }
+        }
+    })
+</script>
+</body>
+</html>

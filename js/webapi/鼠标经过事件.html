@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+    <li>hahahahaha哈哈哈哈</li>
+</ul>
+<script>
+    var myliobjs = document.getElementsByTagName("li");
+    for(var i=0; i<myliobjs.length; i++){
+        myliobjs[i].onmouseover = function () {
+            this.style.backgroundColor = "yellow";
+        }
+        myliobjs[i].onmouseout = function () {
+            this.style.backgroundColor = "white";
+        }
+    }
+</script>
+</body>
+</html>

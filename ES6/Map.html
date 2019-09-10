@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var map = new Map();
+    map.set('a', 1);
+    console.log(map.get('a'));
+    //错误方法
+    map.set(['b'], 2);
+    console.log(map.get(['b']));
+    //正确方法
+    var tmpc = ['c'];
+    map.set(tmpc, 2);
+    console.log(map.get(tmpc));
+    //获取所有键以及值
+    console.log(map.keys());
+    console.log(map.values());
+</script>
+</body>
+</html>

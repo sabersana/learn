@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <say-hi></say-hi>
+</div>
+<script>
+    Vue.component('say-hi',{
+        template:'<p>Hello {{ name }}！</p>',
+        // 得写成函数形式返回才可
+        data: function () {
+            return {name: '郑自强'}
+        }
+    });
+    var myApp = new Vue({
+        el:'#myApp'
+    })
+</script>
+</body>
+</html>

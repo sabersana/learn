@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //repeat
+    var str = 'Hello world!';
+    console.log(str.repeat(3));//相当于输出三个
+    //模板字符串
+    var html = `
+    <p>${str}</p>
+    `
+    document.body.innerHTML = html;
+</script>
+</body>
+</html>

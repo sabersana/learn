@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for(var i = 1; i<=1; i++){
+        var j = 1;
+    }
+    console.log(j);//可以看到在for循环内声明的变量是可以在循环外调用的
+    function f(){
+        var k = 1;
+    }
+    f();
+    // console.log(k);//函数内声明的函数不可在函数外调用
+
+    // 隐式全局变量，隐式不用var声明
+    function f1() {
+        l = 100;
+    }
+    f1();
+    console.log(l);//可以调用函数内的隐式全局变量
+    /*但凡var声明的变量都是全局变量，除去函数内声明的*/
+</script>
+</body>
+</html>

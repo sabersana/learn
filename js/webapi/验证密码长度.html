@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="password" id="pwd">
+<script>
+    var pwdobj = document.getElementById("pwd");
+    pwdobj.onblur = function () {
+        if (this.value.length>6 && this.value.length<16) {
+            this.style.backgroundColor = "green";
+        }else{
+            this.style.backgroundColor = "red";
+        }
+    }
+</script>
+</body>
+</html>

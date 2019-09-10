@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* 普通的函数声明
+    function 函数名(){
+    函数体
+    }
+    调用
+    函数();
+     */
+    /* 匿名函数的声明 函数表达式
+    var 变量名 = function (){
+    函数体
+    };
+    调用
+    变量名();
+     */
+    var f = function () {
+        console.log("我是匿名函数");
+    };
+    f();
+    /*
+    可以把函数名理解为存储命令的变量
+    故若
+    console.log(函数名);会输出这个函数体
+    但是如果console.log(函数名());就会输出这个函数返回的内容
+    故可以将()理解为用代码的方式运行这个变量
+    因此也可以
+    (function(){函数体})();
+    调用函数
+     */
+    (function () {
+        console.log("我是直接调用，一次性函数");
+    })();
+    /*
+    function 是一种数据类型！！
+     */
+</script>
+</body>
+</html>

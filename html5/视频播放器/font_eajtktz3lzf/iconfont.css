@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1564109859130'); /* IE9 */
+  src: url('iconfont.eot?t=1564109859130#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPgAAsAAAAACGgAAAORAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEHIN0ATYCJAMQCwoABCAFhG0HTxttB8iOUyyYToKH793y72SGbZCqp6YOVBRJIPjJZmsmfyL6WX9i/mcC0fDuIQCKaKHMvNaWs8z4Md2sw+HNPWtvSVAEIQkSoRBq73iCciAMGKlZxLO4UGLKyfsQgI8G2hJDh48NoqNgywQgMnYigp5ZUT2NAh1BSctehdiJB13bpL0AdtjPi5/oHB00PBK2dqI1LM7Ab9p8t16uLK5klsYhO54bmBwCCbQFCkSy1RtF+mxbEt/qN4ruQEdHg2/afBv4bn2xiOX3otX5Xx5INASIElh9AICuxCx5YjIpgoRvAyJo8N16+RuoVwDoe+fPAb9Rcj2N4uqaLBQIyGpyrFJzWXlmyzkhQvs0Z1WNsD911ufbXFmUn155xu8P7u2y15w6wH584dI09YDmbK4WFPnTcGyJM4f372GvHtrveVuWvPNO6O23g+++G37vvUXvfTf13W/Db38dfOebuaFgcEtNERMHVtUQUbEfmkZbeSbShwEQVoUwBlZP3Qfbs/ydd+b4Nd9MecuAD/6uULle5Qo3nt3BWo1rbXq+N3L/383qNlKe7ybGwWc3lKfTtYHTgbpWan6oMTTsdrfUb7+pWxxppLy31a8RkVb/nlNvVu1anrc4wuo3x9paEZHte0L3k/fthiE9RoPPX03/IiUxvULlCgNlK8XhjxWox9wMqi2WdDkjP/tMYtWZMYaVtJyus8P5ajueTAGA4iO5WgrL2yC/l9n8bflEjvz3v0OfCX81t2Lf33S/AuCDedua4EhxgwIu+wtlK9l/LQN2qbWC2ZRaKqV041PMSpahAT58wD9chCo+PYa/OqJboE9lGDTKUR8kOk3xitwWPPjpCiXoDAAfbYw47KcqB4lQXqC1dQgElVwCjQo8AkklL/GK/Al4qOEXKKFSJPgIi6pn+mke2zfEMSOuGTeiiww7ls9ZwuH6XONkM1GWiTipwnLDplNqJ4xO7TuWhRFmznSOsaF0fqKz61qG5eSzxnD0mJnJ5I2Ck0+ZMbd90nULvTt0sNpe1D6Wz+JjCA4mEVxM4hiiLMJgEyNPDkv3d/FV75+MSYIyMkRwejquxMOYOJRij27opL2OAPwIbQ7U8VomlzKfBJ25uFh0kYVDniyG4dhtkuHZPIZC+6wUJjFc2kvukS7QWwfSy4Jq259fn/2EhwAf7HwlNCGFEh4qvbJIrmDnEovL7HgkmbjLLY68H38uoVtPJwAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1564109859130') format('woff'),
+  url('iconfont.ttf?t=1564109859130') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1564109859130#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-quanpingzuidahua:before {
+  content: "\e786";
+}
+
+.icon-zanting:before {
+  content: "\e60c";
+}
+
+.icon-zanting1:before {
+  content: "\e52b";
+}
+

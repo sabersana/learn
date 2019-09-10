@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <say-hi name="王小明" v-on:hi_event="sayHi"></say-hi>
+    <p>Hello {{ myname }}！</p>
+</div>
+<script>
+    Vue.component('say-hi',{
+        props:['name'],
+        template:'<button v-on:click="say">询问姓名</button>',
+        methods: {
+            say: function () {
+                str = this.name + '先生'
+                console.log(str);
+                this.$emit('hi_event', str)
+            }
+        }
+    });
+    var myApp = new Vue({
+        el:'#myApp',
+        data: {
+            myname: '先生'
+        },
+        methods: {
+            sayHi: function (value) {
+                console.log(value);
+                this.myname = value
+            }
+    }
+    })
+</script>
+</body>
+</html>

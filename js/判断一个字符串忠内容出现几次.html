@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "helloHHH";
+    var obj = {};
+    str = str.toLocaleLowerCase();
+    for(var i = 0; i<str.length; i++){
+        if(obj[str[i]]){
+            obj[str[i]]++;
+        }else{
+            obj[str[i]] = 1;
+        }
+    }
+    for(var key in obj){
+        console.log(key+"出现了"+obj[key]+"次");
+    }
+</script>
+</body>
+</html>

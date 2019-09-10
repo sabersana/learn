@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="msg">
+    <h1 v-if="age">{{ age }}</h1>
+    <h1 v-else>999</h1>
+    age: <input type="number" v-model.lazy.number="age">
+</div>
+<script>
+    var myapp = new Vue({
+        el:'#msg',
+        data:{
+            age: 999,
+        },
+        watch: {
+            age: function () {
+                console.log(this.age, typeof this.age);
+            }
+        }
+    });
+</script>
+</body>
+</html>

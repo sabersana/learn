@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .v-enter, .v-leave-to {
+            opacity: 0;
+            transform: translateX(150px);
+        }
+        .v-enter-active, .v-leave-active {
+            transition: all 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button @click="change">click</button>
+    <transition>
+        <h1 v-if="flag">这是一个大标题</h1>
+    </transition>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data: {
+            flag: false
+        },
+        methods: {
+            change: function () {
+                this.flag = !this.flag
+            }
+        }
+    })
+</script>
+</body>
+</html>

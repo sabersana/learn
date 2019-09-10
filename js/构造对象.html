@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*1.使用系统的构造函数创建对象
+    var 变量名 = new Object();
+     */
+    var obj1 = new Object();
+    obj1.name = "ZZQ";
+    obj1.age = 20;
+    obj1.eat = function () {
+        console.log("吃饭喽！");
+    }
+    console.log(obj1.name);
+    obj1.eat();
+    console.log(obj1 instanceof Object);//判断obj1是否为object类型
+    obj1.say = function () {
+        console.log("大家好，我叫" + this.name);//当前对象可以用this访问
+    }
+    obj1.say();
+    /*2.工厂函数创建对象
+    function 函数名() {
+    var 变量名 = new Object();
+    变量名.属性 = 。。。
+    变量名.方法 = 。。。
+    return 变量名
+    }
+    var 变量名 = 函数名();
+     */
+    /*3.自定义构造函数
+    function 函数名() {
+    this.属性名=。。
+    this.方法=。。
+    }
+    var 变量名 = new 函数名();
+     */
+    /*4.字面量方式创建对象
+    var 对象名 = {};//{}代表对象，内容为空时就是空对象
+    var 对象名 = {
+    变量名:"值",
+    function 函数名 {
+    函数体;
+    },
+    };
+    ！！注意{}内用逗号，后用分号;
+    字面量是一次性对象
+     */
+    /*访问方式有
+    对象名.变量名
+    还有
+    对象名["属性名"]
+     */
+</script>
+</body>
+</html>

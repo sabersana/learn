@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <h2>你最喜欢的角色</h2>
+    <select v-model="likeWho" style="width: 200px">
+        <option>闪闪</option>
+        <option>正义的伙伴</option>
+        <option>土狗</option>
+        <option>卫宫士郎</option>
+        <option>扑街仔</option>
+    </select>
+    <h2>喜欢的角色</h2>
+    <select v-model="likeWhoes" multiple style="width: 200px">
+        <option>闪闪</option>
+        <option>正义的伙伴</option>
+        <option>土狗</option>
+        <option>卫宫士郎</option>
+        <option>扑街仔</option>
+        <option>屎忽鬼</option>
+        <option>非凡哥</option>
+        <option>蔡徐坤</option>
+    </select>
+    <p>最喜欢的角色是： {{likeWho}}</p>
+    <p>喜欢的角色有： {{likeWhoes}}</p>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        data: {
+            likeWho: '',
+            likeWhoes: []
+        }
+    })
+</script>
+</body>
+</html>

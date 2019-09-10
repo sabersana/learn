@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <input type="text" v-on:keyup="txtKeyup">
+    <button v-on:click="btnClick">按钮</button>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        data: {},
+        methods: {
+            txtKeyup: function (event) {
+                console.log(event)
+                console.log( event.srcElement.value, event.key)
+            },
+            btnClick: function (event) {
+              console.log(event.srcElement.tagName)
+            }
+        }
+    })
+</script>
+</body>
+</html>

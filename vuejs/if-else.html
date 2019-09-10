@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <h1 v-if="score == 0">成绩未公布</h1>
+    <h1 v-else-if="score < 60">{{score}}，不及格</h1>
+    <h1 v-else-if="score <80">{{score}}，及格但不优秀</h1>
+    <h1 v-else-if="score <100">{{ score }}, 接近完美了</h1>
+    <h1 v-else-if="score == 100">{{ score }}, 完美</h1>
+    <button @click="seeScore">查看成绩</button>
+</div>
+<script>
+    var myApp = new Vue({
+        el:'#myApp',
+        data:{
+            score: 0
+        },
+        methods: {
+            seeScore: function () {
+                this.score = Math.ceil(Math.random()*100)
+            }
+        }
+    })
+</script>
+</body>
+</html>

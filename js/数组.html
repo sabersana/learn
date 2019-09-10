@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数构造方法
+    var a = new Array(5);
+    a[0] = 1;
+    a[1] = 2;
+    a[2] = 3;
+    a[3] = 4;
+    a[4] = 5;
+    a[5] = 7;
+    console.log(a);
+    var b = new Array(1, 2, 3, 4, 5, 6);//加入内容直接构造
+    console.log(b);
+    var c = new Array(5);//只有一个数字时代表长度
+    console.log(c);
+    //字面量构造
+    var d = [1, 2, 3, 4, 5, 6, 7, 100];
+    console.log(d);
+    console.log(d.length);
+    var e = [];
+    for(var i = 0; i<10; i++){
+        e[i] = i;
+    }
+    console.log(e);
+    for(var i = 1; i<11; i++){//数组从0开始
+        console.log(e[i]);
+    }
+    var names = ["张三", "李四", "王五"], str = "";
+    for(var i = 0; i<names.length-1; i++){
+        str += names[i]+'!!';
+    }
+    str += names[names.length-1];
+    console.log(str);
+</script>
+</body>
+</html>

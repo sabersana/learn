@@ -1,0 +1,394 @@
+.section1 {
+    position: relative;
+    background-color: #00c3ff;
+}
+
+.space {
+    height: 500px;
+}
+
+.section1 .cloud-fly {
+    position: absolute;
+    display: block;
+    width: 3840px;
+    height: 1000px;
+    background: url("../img/section_1_bg_1.jpg") no-repeat top left;
+    animation: cloud-fly 120s linear 0s infinite normal;
+}
+
+@keyframes cloud-fly {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1920px);
+    }
+}
+
+.main-content {
+    width: 1024px;
+    height: 740px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+
+.main-content .big-kiana {
+    height: 858px;
+    width: 457px;
+    background: url("../img/section_1_kiana.png");
+    position: absolute;
+    top: 142px;
+}
+
+.main-content .logo {
+    height: 290px;
+    width: 400px;
+    background: url("../img/bh3logo.png");
+    background-size: cover;
+    position: absolute;
+    top: 120px;
+    left: 580px;
+}
+
+.main-content .slogan {
+    height: 146px;
+    width: 422px;
+    background: url("../img/bh3_slogan.png");
+    position: absolute;
+    left: 300px;
+    top: 460px;
+}
+
+.main-content .xiao-ai {
+    height: 170px;
+    width: 184px;
+    background: url("../img/social_btn.png");
+    cursor: pointer;
+    position: absolute;
+    left: 800px;
+    top: 580px;
+    transition: 0.4s;
+}
+
+.main-content .xiao-ai:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.role-list {
+    max-width: 1920px;
+    min-height: 360px;
+    position: relative;
+    background: url("../img/nav_list_bg.png") no-repeat;
+}
+
+.role-list .upline {
+    background: url("../img/upline.png") no-repeat center;
+    width: 960px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.role-list .downline {
+    background: url("../img/downline.png") no-repeat center;
+    width: 960px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.video .version-pv, .game-pv {
+    width: 320px;
+    height: 210px;
+    border: 5px #fff solid;
+    border-radius: 20px;
+    transform: skew(-10deg);
+    overflow: hidden;
+}
+
+.video video {
+    height: 200px;
+    transform: skew(10deg);
+    margin-left: -25px;
+}
+
+.video .version-pv {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+}
+
+.video .game-pv {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+}
+
+.video .pause-icon {
+    height: 100%;
+    width: 120%;
+    background: url("../img/skill_video_mask.png") no-repeat;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    transform: skew(10deg);
+    margin-left: -5px;
+}
+
+.video .version-pv:hover .pause-icon {
+    background: url("../img/skill_video_mask_on.png") no-repeat;
+}
+
+.video .game-pv:hover .pause-icon {
+    background: url("../img/skill_video_mask_on.png") no-repeat;
+}
+
+.video .title-ver-pv {
+    position: absolute;
+    left: 140px;
+    top: 270px;
+    color: #fff;
+    font-size: 22px;
+}
+
+.video .title-game-pv {
+    position: absolute;
+    right: 170px;
+    top: 270px;
+    color: #fff;
+    font-size: 22px;
+}
+
+.role-list ul {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.role-list ul li {
+    display: inline-block;
+    /*float: left;*/
+    margin: 5px;
+}
+
+.role-list ul a {
+    display: inline-block;
+    height: 140px;
+    width: 140px;
+    border: 3px solid #fff;
+    border-radius: 16px;
+    transform: skew(-10deg) scale(1.0);
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.role-list li div {
+    display: inline-block;
+    height: 100%;
+    width: 140px;
+    transform: skew(10deg);
+}
+
+.role-list a:hover {
+    background-color: rgba(254, 223, 76, 0.7);
+    transform: skew(-10deg) scale(1.1);
+}
+
+#kiana {
+    background: url("../img/roles/kiana_pt.png") top center;
+}
+
+.section2 {
+    height: 655px;
+    width: 100%;
+    background: url("../img/bg_02_02.jpg") center;
+}
+
+.section2 .news {
+    width: 1012px;
+    margin: auto;
+    padding-top: 88px;
+    padding-bottom: 88px;
+}
+
+.section2 .news .news-box {
+    height: 316px;
+    background-color: rgba(0, 0, 0, .7);
+    border: 3px solid rgba(0, 0, 0, .3);
+    overflow: hidden;
+}
+
+.news-box .news-left {
+    float: left;
+    height: 100%;
+    width: 472px;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-left ul {
+    display: block;
+    height: 100%;
+    width: 1422px;
+    transition: 1s;
+}
+
+.news-left ul li {
+    float: left;
+}
+
+.news-left .news-slider {
+    height: 15px;
+    width: 142px;
+    position: absolute;
+    left: 50%;
+    margin-left: -71px;
+    bottom: 10px;
+}
+
+.news-slider li {
+    height: 15px;
+    width: 15px;
+    background-color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.news-slider li:nth-child(2) {
+    margin: 0 47px;
+}
+
+.news-left .news-slider .on {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.news-right {
+    display: inline-block;
+    height: 100%;
+    width: 490px;
+    margin-left: 20px;
+}
+
+.news-right .news-nav {
+    overflow: hidden;
+    border-bottom: 1px solid #4b869f;
+}
+
+.news-right .news-nav .on {
+    color: #00c3ff;
+    border-bottom: 2px solid #00c3ff;
+}
+
+.news-right .news-nav li {
+    float: left;
+    display: block;
+    height: 57px;
+    width: 86px;
+    line-height: 57px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.news-right .news-nav li:hover {
+    color: #00c3ff;
+}
+
+.news-nav .more-news {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: 35px;
+    background: url("../img/more_news.png");
+    float: right;
+}
+
+.news-right .news-list {
+    margin-top: 5px;
+}
+.news-list li {
+    height: 41px;
+    line-height: 41px;
+    color: #fff;
+    font-size: 15px;
+}
+.news-list .news-time {
+    float: right;
+}
+.news-list a:hover {
+    color: #00c3ff;
+}
+.news-list .news-title {
+    float: left;
+    width: 293px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news .news-icon li{
+    height: 149px;
+    width: 200px;
+    float: left;
+    margin-top: 10px;
+}
+.news .news-icon li:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    width: 1024px;
+    margin: 100px auto 100px;
+    overflow: hidden;
+}
+.footer .footer-msg {
+    overflow: hidden;
+}
+.footer-logo {
+    width: 350px;
+    min-height: 94px;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+.footer-logo .space {
+    display: inline-block;
+    height: 50px;
+    width: 3px;
+    background-color: #cccccc;
+    margin: 0 33px;
+}
+
+.footer-something {
+    float: right;
+    color: #aaa;
+    font-size: 14px;
+}
+.footer-something ul {
+    overflow: hidden;
+    margin-top: 20px;
+}
+.footer-something li {
+    float: left;
+}
+.footer-something a:hover {
+    text-decoration: underline;
+}
+.footer-something .space {
+    height: 14px;
+    width: 1px;
+    display: block;
+    background-color: #ccc;
+    margin: 3px 7px 0px;
+}
+.footer-something p {
+    margin: 10px 0;
+}
+.footer-advice {
+    width: 100%;
+    font-size: 14px;
+    color: #aaa;
+}
+.footer-advice p {
+    margin: 30px 0;
+}
+
+

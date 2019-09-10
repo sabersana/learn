@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="清理定时器" id="btn">
+<script>
+    // 设置一个每隔3秒执行一次function的定时器，返回值为定时器id
+    var timeid = setInterval(function () {
+        alert("yoooooooooo~");
+    },3000);
+
+    document.getElementById("btn").onclick = function () {
+        // 参数为要被清理的定时器的id
+        window.clearInterval(timeid);
+    };
+</script>
+</body>
+</html>

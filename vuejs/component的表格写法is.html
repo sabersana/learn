@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="myApp">
+    <table border="1">
+        <tr><td>游戏</td><td>地址</td></tr>
+<!--        在表格中需要用到is属性，否则表格中的v标签则会变到表格外-->
+        <tr is="row1"></tr>
+        <tr is="row2"></tr>
+        <tr is="row3"></tr>
+    </table>
+</div>
+<script>
+    var myApp = new Vue({
+        el: '#myApp',
+        components: {
+            'row1': {
+                template: '<tr><td>三国杀</td><td>游卡</td></tr>'
+            },
+            'row2': {
+                template: '<tr><td>CSGO</td><td>完美世界</td></tr>'
+            },
+            'row3': {
+                template: '<tr><td>4399</td><td>4399</td></tr>'
+            },
+        }
+    })
+</script>
+</body>
+</html>

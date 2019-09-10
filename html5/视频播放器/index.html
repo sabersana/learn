@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .videoplayer {
+            height: 400px;
+            width: 720px;
+            position: absolute;
+            top: 200px;
+            left: 300px;
+        }
+        .videomain video {
+            height: 100%;
+        }
+        .videoplayer .loading {
+            height: 400px;
+            width: 720px;
+            background: url("img/1.jpg") no-repeat center;
+        }
+
+        .videoplayer .loading span {
+            height: 30px;
+            width: 300px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -15px;
+            margin-left: -150px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .videomain {
+            /*height: 400px;*/
+            /*width: 720px;*/
+            height: 100%;
+            width: 100%;
+            display: none;
+        }
+
+        #controls {
+            height: 30px;
+            width: 720px;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -360px;
+            line-height: 30px;
+        }
+
+        #pause {
+            height: 30px;
+            display: block;
+            float: left;
+            margin: 0 30px;
+            line-height: 30px;
+        }
+        .loadline {
+            height: 10px;
+            width: 350px;
+            border-radius: 10px;
+            float: left;
+            margin: 10px 30px 10px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .loadline .load {
+            height: 10px;
+            width: 350px;
+            background-color: #000;
+        }
+        #nowload {
+            height: 10px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #controls .time {
+            float: left;
+            margin-right: 30px;
+        }
+
+        #full {
+            height: 30px;
+            display: block;
+            float: left;
+            margin-left: 10px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="videoplayer">
+    <div class="loading">
+        <span>视频努力加载中，老爷们还请等等~</span>
+    </div>
+    <div class="videomain">
+        <video src="video/1.mp4"></video>
+        <div id="controls">
+            <span id="pause" class="play">开始播放</span>
+            <div class="loadline">
+                <div class="load"></div>
+                <div id="nowload"></div>
+            </div>
+            <div class="time">
+                <span id="nowtime">00:00</span>
+                <span> / </span>
+                <span id="maintime">00:00</span>
+            </div>
+            <span id="full" class="nofull">进入全屏</span>
+        </div>
+    </div>
+</div>
+<script>
+    function getTime(time) {
+        var f = Math.floor(time / 60);
+        var s = Math.ceil(time - 60 * f);
+        return (f > 10 ? f : '0' + f) + ":" + (s > 10 ? s : '0' + s);
+    }
+
+    var videoobj = document.querySelector("video");
+    var loadobj = document.getElementById("nowload");
+    videoobj.oncanplay = function () {
+        document.querySelector(".loading").style.display = "none";
+        document.querySelector(".videomain").style.display = "block";
+        document.getElementById("maintime").innerText = getTime(videoobj.duration);
+    };
+    document.getElementById("pause").onclick = function () {
+        if (this.className == "play") {
+            this.innerText = "点击暂停";
+            this.className = "stop";
+            videoobj.play();
+        } else {
+            this.innerText = "点击继续";
+            this.className = "play";
+            videoobj.pause();
+        }
+    };
+    videoobj.ontimeupdate = function () {
+        var nowload = videoobj.currentTime / videoobj.duration *100 +'%';
+        loadobj.style.width = nowload;
+        document.getElementById("nowtime").innerText = getTime(videoobj.currentTime);
+    };
+    document.getElementById("full").onclick = function () {
+        if (this.className == "nofull") {
+            this.innerText = "退出全屏";
+            this.className = "onfull";
+            document.querySelector(".videomain").webkitRequestFullScreen();
+            // videoobj.webkitRequestFullScreen();
+            // requestFullscreen();
+        }
+        else {
+            this.innerText = "进入全屏";
+            this.className = "nofull";
+            document.webkitExitFullscreen();
+        }
+    };
+    videoobj.onended = function () {
+        document.getElementById("pause").innerText = "开始播放";
+        document.getElementById("pause").className = "play";
+        loadobj.style.width = "0";
+    };
+    document.querySelector(".loadline").onclick = function (e) {
+        var offset = e.offsetX;
+        // console.log(offset);
+        // console.log(this.offsetWidth);
+        var nowtime = offset / this.offsetWidth * videoobj.duration;
+        // nowtime += "";
+        videoobj.currentTime = nowtime;
+    }
+</script>
+</body>
+</html>

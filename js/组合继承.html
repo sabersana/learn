@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function person( name, age, sex ) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+    person.prototype.sayhi = function () {
+        console.log("hello!");
+    };
+    function student( name, age, sex, score ) {
+        person.call( this, name, age, sex );
+        this.score = score;
+    }
+    student.prototype = new person();
+    var stu = new student("嘿嘿", 20, "女", 100 );
+    console.log(stu.name, stu.age, stu.sex, stu.score);
+    stu.sayhi();
+</script>
+</body>
+</html>
